@@ -37,6 +37,13 @@ if ("geolocation" in navigator) {
     const tiles = L.tileLayer(tileUrl, { attribution });
     tiles.addTo(mymap);
     const marker = L.marker([lat, lon]).addTo(mymap);
+
+    var circle = L.circle([lat, lon], {
+      color: "red",
+      fillColor: "#f03",
+      fillOpacity: 0.5,
+      radius: 500,
+    }).addTo(mymap);
   });
 } else {
   console.log("geolocation not available");
