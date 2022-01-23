@@ -44,6 +44,11 @@ if ("geolocation" in navigator) {
       fillOpacity: 0.5,
       radius: 500,
     }).addTo(mymap);
+    var polygon = L.polygon([
+      [lat + 0.02, lon - 0.02],
+      [lat + 0.05, lon - 0.05],
+      [lat - 0.05, lon - 0.05],
+    ]).addTo(mymap);
   });
 } else {
   console.log("geolocation not available");
