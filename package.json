@@ -1,0 +1,15 @@
+{
+  "name": "geomaps---proj12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "geo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "archit jain",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "leaflet": "^1.7.1"
+  }
+}
