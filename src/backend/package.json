@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^14.3.2",
+    "firebase": "^9.6.5",
     "mongoose": "^6.1.8"
   }
 }
