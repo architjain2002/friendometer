@@ -1,5 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
+// import logo from "./logo.svg";
+// import "./App.css";
+import "./auth.css";
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
 
           {/* <!-- Remind Passowrd --> */}
           <div id="formFooter">
-            <a className="underlineHover" href="#">
+            <a className="underlineHover" href="/">
               Forgot Password?
             </a>
           </div>
