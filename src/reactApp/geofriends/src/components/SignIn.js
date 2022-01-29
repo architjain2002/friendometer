@@ -1,12 +1,12 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 export default function SignIn() {
-  //   const handleLoginFailure = (res) => {
-  //     console.log(res);
-  //   };
-  //   const handleLoginSuccess = (res) => {
-  //     console.log(res);
-  //   };
+  const handleLoginFailure = (res) => {
+    console.log(res);
+  };
+  const handleLoginSuccess = (res) => {
+    console.log(res);
+  };
   return (
     <div className="App">
       <div className="wrapper fadeInDown">
@@ -46,8 +46,8 @@ export default function SignIn() {
             <GoogleLogin
               clientId="47631250735-m0pnlki1jri3f37khqmtcdg5o4v0eq6r.apps.googleusercontent.com"
               buttonText="Login"
-              //   onSuccess={handleLoginSuccess}
-              //   onFailure={handleLoginFailure}
+              onSuccess={handleLoginSuccess}
+              onFailure={handleLoginFailure}
               cookiePolicy={"single_host_origin"}
             />
           </div>
