@@ -1,6 +1,12 @@
-import React, { useState } from "react";
-
+import React from "react";
+import GoogleLogin from "react-google-login";
 export default function SignIn() {
+  //   const handleLoginFailure = (res) => {
+  //     console.log(res);
+  //   };
+  //   const handleLoginSuccess = (res) => {
+  //     console.log(res);
+  //   };
   return (
     <div className="App">
       <div className="wrapper fadeInDown">
@@ -8,16 +14,10 @@ export default function SignIn() {
           {/* <!-- Tabs Titles --> */}
           <h2 className="active"> Sign In </h2>
           <h2 className="inactive underlineHover">Sign Up </h2>
-
           {/* <!-- Icon --> */}
           <div className="fadeIn first">
-            <img
-              src="http://danielzawadzki.com/codepen/01/icon.svg"
-              id="icon"
-              alt="User Icon"
-            />
+            <img id="icon" alt="User Icon" />
           </div>
-
           {/* <!-- Login Form --> */}
           <form>
             <input
@@ -36,12 +36,20 @@ export default function SignIn() {
             />
             <input type="submit" className="fadeIn fourth" value="Log In" />
           </form>
-
           {/* <!-- Remind Passowrd --> */}
           <div id="formFooter">
             <a className="underlineHover" href="/">
               Forgot Password?
             </a>
+          </div>
+          <div>
+            <GoogleLogin
+              clientId="47631250735-m0pnlki1jri3f37khqmtcdg5o4v0eq6r.apps.googleusercontent.com"
+              buttonText="Login"
+              //   onSuccess={handleLoginSuccess}
+              //   onFailure={handleLoginFailure}
+              cookiePolicy={"single_host_origin"}
+            />
           </div>
         </div>
       </div>
