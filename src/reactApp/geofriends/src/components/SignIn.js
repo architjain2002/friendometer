@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import GoogleLogin from "react-google-login";
 export default function SignIn() {
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
   const handleLoginFailure = (res) => {
     console.log(res);
   };
   const handleLoginSuccess = (res) => {
     console.log(res);
+  };
+  const handleNameChange = (event) => {
+    setUsername(event.target.value);
+    console.log(Username);
+  };
+  const handleNameChange = (event) => {
+    setUsername(event.target.value);
+    console.log(Username);
   };
   return (
     <div className="App">
@@ -26,6 +36,7 @@ export default function SignIn() {
               className="fadeIn second"
               name="login"
               placeholder="login"
+              onChange={handleNameChange}
             />
             <input
               type="text"
