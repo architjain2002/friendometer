@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^14.3.2",
     "firebase": "^9.6.5",
     "mongoose": "^6.1.8"
