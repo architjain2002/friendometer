@@ -4,7 +4,7 @@ content-type: application/json
 
 {
     "Name": "Archit",
-    "Email": "example@example.com",
+    "Email": "example@example123.com",
     "Password": "Hello world",
     "location":[{
         "AcceptedEmail": "example@example.com",

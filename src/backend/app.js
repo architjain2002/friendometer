@@ -41,20 +41,32 @@ mongoose
 app.post("/authCustom", (req, res) => {
   const authObj = new AuthModel(req.body);
   const password = authObj.Password;
-  bcrypt.genSalt(10, function (err, salt) {
-    bcrypt.hash(password, salt, function (err, hash) {
-      if (err) {
-        console.log(err);
-        res.sendStatus(400);
-      } else {
-        authObj.Password = hash;
-        console.log(`the password is:${password} and hashed is:${hash}`);
-        console.log(authObj);
-        res.sendStatus(200);
-      }
-    });
+  AuthModel.findOne({ Email: req.body.Email }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(400);
+    } else if (data === null) {
+      bcrypt.genSalt(10, function (err, salt) {
+        bcrypt.hash(password, salt, function (err, hash) {
+          if (err) {
+            console.log(err);
+            res.sendStatus(400);
+          } else {
+            authObj.Password = hash;
+            console.log(`the password is:${password} and hashed is:${hash}`);
+            console.log(authObj);
+            authObj.save();
+            res.sendStatus(200);
+          }
+        });
+      });
+    } else {
+      console.log("Email already present while signup");
+      res.send("Email already present while signup");
+    }
   });
 });
+app.post("/authlogin", (req, res) => {});
 // listening to the server
 server.listen(port, () => {
   console.log(`server running`);
