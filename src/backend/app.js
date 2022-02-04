@@ -66,7 +66,28 @@ app.post("/authCustom", (req, res) => {
     }
   });
 });
-app.post("/authlogin", (req, res) => {});
+app.post("/authlogin", (req, res) => {
+  AuthModel.findOne({ Email: req.body.Email }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(400);
+    } else if (data != null) {
+      const password = req.body.Password;
+      const hash = data.Password;
+      bcrypt.compare(password, hash, function (err, result) {
+        if (result) {
+          console.log("The User logins successfully");
+          res.send("The User logins successfully");
+        } else {
+          console.log("The Password entered is invalid");
+          res.send("The Password entered is invalid");
+        }
+      });
+    } else {
+      res.send("User does not exist..please sign up before logging in");
+    }
+  });
+});
 // listening to the server
 server.listen(port, () => {
   console.log(`server running`);
