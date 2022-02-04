@@ -49,6 +49,7 @@ app.post("/authCustom", (req, res) => {
       } else {
         authObj.Password = hash;
         console.log(`the password is:${password} and hashed is:${hash}`);
+        console.log(authObj);
         res.sendStatus(200);
       }
     });
