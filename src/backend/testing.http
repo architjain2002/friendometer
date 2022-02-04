@@ -1,4 +1,4 @@
-POST http://localhost:80/authCustom
+POST http://localhost:3000/authCustom
 content-type: application/json
 
 
@@ -8,8 +8,8 @@ content-type: application/json
     "Password": "Hello world",
     "location":[{
         "AcceptedEmail": "example@example.com",
-        "AcceptedName": asdfasd,
+        "AcceptedName": "asdfasd",
         "lat": 100,
-        "long": 100,
+        "long": 100
     }]
 }
