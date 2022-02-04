@@ -43,10 +43,13 @@ app.post("/authCustom", (req, res) => {
   const password = authObj.Password;
   bcrypt.genSalt(10, function (err, salt) {
     bcrypt.hash(password, salt, function (err, hash) {
-      if (err) throw err;
-      else {
+      if (err) {
+        console.log(err);
+        res.sendStatus(400);
+      } else {
         authObj.Password = hash;
         console.log(hash);
+        res.sendStatus(200);
       }
     });
   });
