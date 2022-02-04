@@ -1,0 +1,15 @@
+POST http://localhost:80/authCustom
+content-type: application/json
+
+
+{
+    "Name": "Archit",
+    "Email": "example@example.com",
+    "Password": "Hello world",
+    "location":[{
+        "AcceptedEmail": "example@example.com",
+        "AcceptedName": asdfasd,
+        "lat": 100,
+        "long": 100,
+    }]
+}

@@ -11,15 +11,19 @@ const authSchema = new Schema({
     type: String,
     required: true,
   },
-  PhotoUrl: {
+  Password: {
     type: String,
     required: true,
   },
+  // PhotoUrl: {
+  //   type: String,
+  //   required: true,
+  // },
   location: [
     {
       AcceptedEmail: String,
       AcceptedName: String,
-      AcceptedPhotoUrl: String,
+      // AcceptedPhotoUrl: String,
       lat: mongoose.Types.Decimal128,
       long: mongoose.Types.Decimal128,
     },

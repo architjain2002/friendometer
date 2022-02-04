@@ -6,6 +6,7 @@ const fs = require("fs");
 const server = http.createServer(app);
 const path = require("path");
 const { find } = require("async");
+const bcrypt = require("bcrypt");
 // middleware required
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -19,7 +20,7 @@ const port = process.env.PORT || 3000;
 //database connections
 const mongoose = require("mongoose");
 // models import
-// const Event = require("./models/events");
+const AuthModel = require("./models/authModel");
 
 // connect to the mongodb database
 require("dotenv").config();
@@ -37,6 +38,19 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+app.post("/authCustom", (req, res) => {
+  const authObj = new AuthModel(req.body);
+  const password = authObj.Password;
+  bcrypt.genSalt(10, function (err, salt) {
+    bcrypt.hash(password, salt, function (err, hash) {
+      if (err) throw err;
+      else {
+        authObj.Password = hash;
+        console.log(hash);
+      }
+    });
+  });
+});
 // listening to the server
 server.listen(port, () => {
   console.log(`server running`);
