@@ -17,6 +17,21 @@ export default function SignIn() {
     setUsername(event.target.value);
     console.log(Username);
   };
+  async function PostSignIn(Username, Password) {
+    const data = {
+      Email: Username,
+      Password: Password,
+    };
+    const response = await fetch("http://localhost:3000/authlogin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log(response);
+    return await response.json();
+  }
   return (
     <div className="App">
       <div className="wrapper fadeInDown">
