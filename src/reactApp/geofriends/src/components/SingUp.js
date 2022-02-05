@@ -28,7 +28,8 @@ export default function SignIn() {
   };
   function PostSignIn(Username, Password) {
     const data = {
-      Email: Username,
+      Name: Username,
+      Email: Email,
       Password: Password,
     };
     fetch("http://localhost:80/authlogin", {

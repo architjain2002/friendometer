@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GoogleLogin from "react-google-login";
 export default function SignIn() {
-  const [Username, setUsername] = useState("");
+  const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const handleLoginFailure = (res) => {
     console.log(res);
@@ -10,19 +10,19 @@ export default function SignIn() {
     console.log(res);
   };
   const handleNameChange = (event) => {
-    setUsername(event.target.value);
-    console.log(Username);
+    setEmail(event.target.value);
+    console.log(Email);
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
     console.log(Password);
   };
   const handleOnclick = () => {
-    PostSignIn(Username, Password);
+    PostSignIn(Email, Password);
   };
-  function PostSignIn(Username, Password) {
+  function PostSignIn(Email, Password) {
     const data = {
-      Email: Username,
+      Email: Email,
       Password: Password,
     };
     fetch("http://localhost:80/authlogin", {
