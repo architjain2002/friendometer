@@ -83,7 +83,7 @@ export default function SignIn() {
               Forgot Password?
             </a>
           </div>
-          {/* <div>
+          <div>
             <GoogleLogin
               clientId="47631250735-m0pnlki1jri3f37khqmtcdg5o4v0eq6r.apps.googleusercontent.com"
               buttonText="Login"
@@ -91,7 +91,7 @@ export default function SignIn() {
               onFailure={handleLoginFailure}
               cookiePolicy={"single_host_origin"}
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
