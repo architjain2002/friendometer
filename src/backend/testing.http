@@ -1,5 +1,5 @@
 # testing for signup
-POST http://localhost:3000/authCustom HTTP/1.1
+POST http://localhost:80/authCustom HTTP/1.1
 content-type: application/json
 
 
@@ -18,7 +18,7 @@ content-type: application/json
 ###
 
 # testing for logging in
-POST http://localhost:3000/authlogin HTTP/1.1
+POST http://localhost:80/authlogin HTTP/1.1
 content-type: application/json
 
 

@@ -17,7 +17,7 @@ app.use(cors());
 
 // hostname and port
 // const hostname = "0.0.0.0"; // ignore for deployment
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 //database connections
 const mongoose = require("mongoose");
