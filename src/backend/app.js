@@ -7,11 +7,13 @@ const server = http.createServer(app);
 const path = require("path");
 const { find } = require("async");
 const bcrypt = require("bcrypt");
+const cors = require("cors");
 // middleware required
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cors());
 
 // hostname and port
 // const hostname = "0.0.0.0"; // ignore for deployment
@@ -84,6 +86,7 @@ app.post("/authlogin", (req, res) => {
         }
       });
     } else {
+      console.log("User does not exist..please sign up before logging in");
       res.send("User does not exist..please sign up before logging in");
     }
   });
