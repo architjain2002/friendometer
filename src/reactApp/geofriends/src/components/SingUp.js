@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GoogleLogin from "react-google-login";
 export default function SignIn() {
   const [Username, setUsername] = useState("");
+  const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const handleLoginFailure = (res) => {
     console.log(res);
@@ -13,10 +14,15 @@ export default function SignIn() {
     setUsername(event.target.value);
     console.log(Username);
   };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+    console.log(Email);
+  };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
     console.log(Password);
   };
+
   const handleOnclick = () => {
     PostSignIn(Username, Password);
   };
@@ -46,8 +52,8 @@ export default function SignIn() {
       <div className="wrapper fadeInDown">
         <div id="formContent">
           {/* <!-- Tabs Titles --> */}
-          <h2 className="active"> Sign In </h2>
-          <h2 className="inactive underlineHover">Sign Up </h2>
+          <h2 className="active"> Sign Up </h2>
+          <h2 className="inactive underlineHover">Sign In </h2>
           {/* <!-- Icon --> */}
           <div className="fadeIn first">
             <img id="icon" alt="User Icon" />
@@ -56,18 +62,26 @@ export default function SignIn() {
           <form>
             <input
               type="text"
+              id="password"
+              className="fadeIn third"
+              name="login"
+              placeholder="Name"
+              onChange={handleNameChange}
+            />
+            <input
+              type="text"
               id="login"
               className="fadeIn second"
               name="login"
-              placeholder="login"
-              onChange={handleNameChange}
+              placeholder="Email"
+              onChange={handleEmailChange}
             />
             <input
               type="text"
               id="password"
               className="fadeIn third"
               name="login"
-              placeholder="password"
+              placeholder="Password"
               onChange={handlePasswordChange}
             />
             <input
@@ -78,11 +92,11 @@ export default function SignIn() {
             />
           </form>
           {/* <!-- Remind Passowrd --> */}
-          <div id="formFooter">
+          {/* <div id="formFooter">
             <a className="underlineHover" href="/">
               Forgot Password?
             </a>
-          </div>
+          </div> */}
           <div>
             <GoogleLogin
               clientId="47631250735-m0pnlki1jri3f37khqmtcdg5o4v0eq6r.apps.googleusercontent.com"

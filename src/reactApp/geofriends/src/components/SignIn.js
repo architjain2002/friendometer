@@ -59,7 +59,7 @@ export default function SignIn() {
               id="login"
               className="fadeIn second"
               name="login"
-              placeholder="login"
+              placeholder="Email"
               onChange={handleNameChange}
             />
             <input
@@ -67,7 +67,7 @@ export default function SignIn() {
               id="password"
               className="fadeIn third"
               name="login"
-              placeholder="password"
+              placeholder="Password"
               onChange={handlePasswordChange}
             />
             <input
