@@ -47,7 +47,7 @@ if ("geolocation" in navigator) {
     L.Routing.control({
       waypoints: [L.latLng(lat, lon), L.latLng(57.6792, 11.949)],
       routeWhileDragging: true,
-    }).addTo(map);
+    }).addTo(mymap);
     var polygon = L.polygon([
       [lat + 0.02, lon - 0.02],
       [lat + 0.05, lon - 0.05],
