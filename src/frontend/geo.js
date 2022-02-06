@@ -44,14 +44,41 @@ if ("geolocation" in navigator) {
       fillOpacity: 0.5,
       radius: 500,
     }).addTo(mymap);
-    L.Routing.control({
-      waypoints: [
-        L.latLng(lat, lon),
-        // L.latLng(57.6792, 11.949),
-        L.latLng(13.1986, 77.7066),
-      ],
-      routeWhileDragging: true,
-    }).addTo(mymap);
+
+    // sample testing array
+    array = [
+      {
+        lat: 13.19,
+        lon: 77.706,
+      },
+      {
+        lat: 13.9,
+        lon: 75.706,
+      },
+      {
+        lat: 12,
+        lon: 78.706,
+      },
+    ];
+    // location of every place in the array from my location
+    for (let index = 0; index < array.length; index++) {
+      L.Routing.control({
+        waypoints: [
+          L.latLng(lat, lon),
+          // L.latLng(57.6792, 11.949),
+          L.latLng(array[index].lat, array[index].lon),
+        ],
+        routeWhileDragging: true,
+      }).addTo(mymap);
+    }
+
+    // way to control directions
+
+    // L.Routing.control({
+    //   waypoints: [L.latLng(lat, lon), L.latLng(13.1986, 77.7066)],
+    //   routeWhileDragging: true,
+    // }).addTo(mymap);
+
     var polygon = L.polygon([
       [lat + 0.02, lon - 0.02],
       [lat + 0.05, lon - 0.05],
