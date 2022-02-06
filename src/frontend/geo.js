@@ -44,6 +44,10 @@ if ("geolocation" in navigator) {
       fillOpacity: 0.5,
       radius: 500,
     }).addTo(mymap);
+    L.Routing.control({
+      waypoints: [L.latLng(lat, lon), L.latLng(57.6792, 11.949)],
+      routeWhileDragging: true,
+    }).addTo(map);
     var polygon = L.polygon([
       [lat + 0.02, lon - 0.02],
       [lat + 0.05, lon - 0.05],
