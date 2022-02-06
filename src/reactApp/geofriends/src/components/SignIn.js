@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 export default function SignIn() {
   const [Email, setEmail] = useState("");
@@ -47,7 +48,9 @@ export default function SignIn() {
         <div id="formContent">
           {/* <!-- Tabs Titles --> */}
           <h2 className="active"> Sign In </h2>
-          <h2 className="inactive underlineHover">Sign Up </h2>
+          <h2 className="inactive underlineHover">
+            <Link to="/signup">Sign Up </Link>
+          </h2>
           {/* <!-- Icon --> */}
           <div className="fadeIn first">
             <img id="icon" alt="User Icon" />

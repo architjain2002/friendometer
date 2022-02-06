@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import GoogleLogin from "react-google-login";
-export default function SignIn() {
+export default function SignUp() {
   const [Username, setUsername] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
@@ -53,8 +54,10 @@ export default function SignIn() {
       <div className="wrapper fadeInDown">
         <div id="formContent">
           {/* <!-- Tabs Titles --> */}
+          <h2 className="inactive underlineHover">
+            <Link to="/signin">Sign In</Link>
+          </h2>
           <h2 className="active"> Sign Up </h2>
-          <h2 className="inactive underlineHover">Sign In </h2>
           {/* <!-- Icon --> */}
           <div className="fadeIn first">
             <img id="icon" alt="User Icon" />
